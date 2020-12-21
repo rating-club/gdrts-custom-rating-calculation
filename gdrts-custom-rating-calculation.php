@@ -31,3 +31,28 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>
 */
 
+$gdrts_crc_dirname_basic = dirname( __FILE__ ) . '/';
+$gdrts_crc_urlname_basic = plugins_url( '/gd-rating-system-builder/' );
+
+define( 'GDRTS_CRC_PATH', $gdrts_crc_dirname_basic );
+define( 'GDRTS_CRC_URL', $gdrts_crc_urlname_basic );
+
+global $_gdrts_crc_core;
+$_gdrts_crc_core = false;
+
+/** Hook for the function to load the addon core. */
+add_action( 'gdrts_load', 'gdrts_crc_load_addon' );
+function gdrts_crc_load_addon() {
+	global $_gdrts_crc_core;
+
+	require_once( GDRTS_CRC_PATH . 'gdrts/addon.php' );
+
+	$_gdrts_crc_core = new gdrts_crc_addon();
+}
+
+/** @return gdrts_crc_addon|boolean */
+function gdrts_custom_rating_calculation() {
+	global $_gdrts_crc_core;
+
+	return $_gdrts_crc_core;
+}
