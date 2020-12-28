@@ -32,7 +32,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 */
 
 $gdrts_crc_dirname_basic = dirname( __FILE__ ) . '/';
-$gdrts_crc_urlname_basic = plugins_url( '/gd-rating-system-builder/' );
+$gdrts_crc_urlname_basic = plugins_url( '/', __FILE__ );
 
 define( 'GDRTS_CRC_PATH', $gdrts_crc_dirname_basic );
 define( 'GDRTS_CRC_URL', $gdrts_crc_urlname_basic );

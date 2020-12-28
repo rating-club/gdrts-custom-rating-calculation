@@ -16,3 +16,7 @@ You can make your own calculation method that uses various data from the rating 
 ## What about exiting ratings?
 
 The calculation function will be run after every rating, and it will also run when using Recalculation tool.
+
+## Create own plugin based on this code
+
+You can use this code base as a base for your own plugin. The way this plugin is designed, it should be located in the directory named `gdrts-custom-rating-calculation`. If you want, you can use the code inside your own custom plugin.
